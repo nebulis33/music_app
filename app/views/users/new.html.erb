@@ -1,0 +1,20 @@
+<%# not using form_with this time in order to practice raw forms more %>
+
+<form action="<%= users_url %>" method="POST">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+    <p>
+        <label for="email">Email</label>
+        <input type="email" name="user[email]" id="email">
+    </p>
+    <p>
+        <label for="name">Name</label>
+        <input type="text" name="user[name]" id="name">
+    </p>
+    <p>
+        <label for="password">Password</label>
+        <input type="password" name="user[password]" id="password">
+    </p>
+
+    <input type="submit" value="Sign Up!">
+</form>

@@ -10,6 +10,29 @@
   </head>
 
   <body>
+    <% if logged_in? %>
+      <nav>
+          <a class='button' href="#">Home</a>
+          
+          <div class='user-detail'>
+            <p>Logged in as: <%= current_user.name %></p>
+            <form action=<%= session_url %> method='post'>
+              <input type="hidden" name="_method" value="delete">
+              <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+              <input type="submit" value="Sign Out">
+            </form>
+          </div>
+      </nav>
+    <% end %>
+    <p>
+      <% if flash[:error] %>
+          <% flash[:error].each do |error| %>
+              <ul>
+                  <li><%= error %></li>
+              </ul>
+          <% end %>
+      <% end %>
+    </p>
     <%= yield %>
   </body>
 </html>
