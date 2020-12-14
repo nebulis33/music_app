@@ -1,0 +1,29 @@
+<h1>Edit <%= @album.title %></h1>
+
+<form action="<%= album_url %>" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="hidden" name="_method" value="PATCH">
+
+    <p>
+        <label for="title">Album title:</label>
+        <input type="text" name="album[title]" id="title">
+    </p>
+
+    <p>
+        <label for="year">Release year:</label>
+        <input type="number" name="album[year]" id="year">
+    </p>
+
+    <p>
+        <label for="recording_type">Studio or live?</label>
+        <select name="album[recording_type]" id="recording_type">
+            <option value="studio" selected>Studio</option>
+            <option value="live">Live</option>
+        </select>
+    </p>
+
+    <input type="submit" value="Update album">
+</form>
+<br>
+
+<%= link_to 'Back to band page', band_path(@album.band) %>

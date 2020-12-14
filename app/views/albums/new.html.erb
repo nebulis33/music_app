@@ -1,0 +1,28 @@
+<h1>New Album for <%= @band.name %></h1>
+
+<form action="<%= albums_url %>" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+    <p>
+        <label for="title">Album title:</label>
+        <input type="text" name="album[title]" id="title">
+    </p>
+
+    <p>
+        <label for="year">Release year:</label>
+        <input type="number" name="album[year]" id="year">
+    </p>
+
+    <p>
+        <label for="recording_type">Studio or live?</label>
+        <select name="album[recording_type]" id="recording_type">
+            <option value="studio" selected>Studio</option>
+            <option value="live">Live</option>
+        </select>
+    </p>
+
+    <input type="submit" value="Create album">
+</form>
+<br>
+
+<%= link_to 'Back to band page', band_path(@band) %>
