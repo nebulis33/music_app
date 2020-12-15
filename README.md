@@ -1,24 +1,36 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a project from App Academy's open course. The premise is an app where you can create an account and
+make bands and their respective albums.
 
-Things you may want to cover:
+Complete functionality:
 
-* Ruby version
+* Create/login to a user account
 
-* System dependencies
+* Encrypted password and basic user auth
 
-* Configuration
+* CRUD functionality for bands/albums/tracks
 
-* Database creation
+* Add and view notes on tracks, delete your own
 
-* Database initialization
+* Basic styling
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+INcomplete functionalities:
 
-* Deployment instructions
+* Testing
 
-* ...
+* Pretty styling
+
+* UX improvements
+
+* Database optimization
+
+* Most refactoring
+
+
+## Relevant information:
+
+* Ruby version 2.6.5
+
+* Rails version 6.0.3.4
