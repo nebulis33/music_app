@@ -4,7 +4,7 @@ class Album < ApplicationRecord
     validates :year, presence: true, numericality: true
 
     belongs_to :band
-    has_many :tracks
+    has_many :tracks, dependent: :destroy
 
     delegate :name, to: :band, prefix: true
 end

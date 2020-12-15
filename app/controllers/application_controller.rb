@@ -12,4 +12,9 @@ class ApplicationController < ActionController::Base
     def logged_in?
         !!current_user
     end
+
+    def require_logged_in!
+        redirect_to new_session_url if !logged_in?
+        # redirect to new session then back to og url?
+    end
 end

@@ -1,2 +1,29 @@
-<h1>Tracks#show</h1>
-<p>Find me in app/views/tracks/show.html.erb</p>
+<h1><%= @track.title %></h1>
+<p>"<%= @track.title %>" is a single off the album <i><%= link_to @track.album_title, album_path(@track.album) %></i>, by <%= link_to @track.band_name, band_path(@track.band) %></p>
+
+<h3>Track Details:</h3>
+<p>
+    <ul>
+        <li>Year: <%= @track.album_year %></li>
+        <li>
+            Regular or bonus? 
+            <% if @track.regular %>
+                Regular
+            <% else %>
+                Bonus
+            <% end %>
+        </li>
+        <li>This is the <%= @track.ord.ordinalize %> track on this album.</li>
+    </ul>
+</p>
+
+<h3>Lyrics:</h3>
+<p>
+    <% if @track.lyrics.present? %>
+        <%= @track.lyrics %>
+    <% else %>
+        No lyrics have been posted for this track yet.
+    <% end %>
+</p>
+
+<%= link_to "Edit this tack", edit_track_path %>

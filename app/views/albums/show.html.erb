@@ -1,2 +1,16 @@
 <h1><%= @album.title %></h1>
 <p>This is an ablum by <%= @album.band.name %>.</p>
+
+<h3>Track List:</h3>
+<%# eventually will need to change controller to display tracks sorted by ord %>
+<ol>
+    <% @album.tracks.each do |track| %>
+        <li><%= link_to track.title, track_path(track) %>
+        <%= "- Bonus" if !track.regular %> - 
+        <%= link_to "edit", edit_track_path %>
+        <%= link_to "delete", track_path(track), method: "DELETE", data: {confirm: "Are you sure?"} %>
+        </li>
+    <% end %>
+</ol>
+
+<%= link_to "Add new track", new_album_track_path(@album) %>
