@@ -2,7 +2,7 @@
 <p>"<%= @track.title %>" is a single off the album <i><%= link_to @track.album_title, album_path(@track.album) %></i>, by <%= link_to @track.band_name, band_path(@track.band) %></p>
 
 <h3>Track Details:</h3>
-<p>
+<section>
     <ul>
         <li>Year: <%= @track.album_year %></li>
         <li>
@@ -15,15 +15,30 @@
         </li>
         <li>This is the <%= @track.ord.ordinalize %> track on this album.</li>
     </ul>
-</p>
+</section>
 
 <h3>Lyrics:</h3>
-<p>
+<section>
     <% if @track.lyrics.present? %>
         <%= @track.lyrics %>
     <% else %>
         No lyrics have been posted for this track yet.
     <% end %>
-</p>
+</section>
 
-<%= link_to "Edit this tack", edit_track_path %>
+<h3>Notes:</h3>
+<section>
+    <% if @track.notes.present? %>
+        <%= render 'notes/notes', notes: @track.notes %>
+    <% else %>
+        No notes for this track yet.
+    <% end %>
+</section>
+
+<section>
+    <h3>Write a note:</h3>
+    <%= render 'notes/form', track: @track %>
+</section>
+<br>
+
+<%= link_to "Edit this track", edit_track_path %>

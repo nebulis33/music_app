@@ -32,7 +32,7 @@ class TracksController < ApplicationController
   end
 
   def show
-    @track = Track.find(params[:id])
+    @track = Track.includes(:notes).find(params[:id])
   end
 
   def destroy

@@ -1,0 +1,9 @@
+<% notes.each do |note| %>
+    <p>
+        <%= note.body %>
+        <br>
+        Written by: <%= note.user_email %>
+        <br>
+        <%= link_to "delete", note_url(note), method: "DELETE", data: {confirm: "Are you sure?"} if note.user_id == current_user.id %>
+    </p>
+<% end %>
