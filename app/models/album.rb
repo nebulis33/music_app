@@ -1,8 +1,10 @@
 class Album < ApplicationRecord
-    validates :title, :year, presence: true
+    validates :title, presence: true, uniqueness: {scope: :band}
     validates :recording_type, inclusion: {in: %w(studio live)}
+    validates :year, presence: true, numericality: true
 
     belongs_to :band
+    has_many :tracks
 
     delegate :name, to: :band, prefix: true
 end
