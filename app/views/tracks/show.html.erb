@@ -20,7 +20,7 @@
 <h3>Lyrics:</h3>
 <section>
     <% if @track.lyrics.present? %>
-        <%= @track.lyrics %>
+        <%= ugly_lyrics(@track.lyrics) %>
     <% else %>
         No lyrics have been posted for this track yet.
     <% end %>
@@ -41,4 +41,4 @@
 </section>
 <br>
 
-<%= link_to "Edit this track", edit_track_path %>
+<%= link_to "Edit this track", edit_track_path, class: 'link' %>

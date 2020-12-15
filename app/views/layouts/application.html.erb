@@ -10,9 +10,12 @@
   </head>
 
   <body>
+    <header>
+    
     <% if logged_in? %>
       <nav>
-          <a class='button' href="#">Home</a>
+          <%= link_to "Home", user_path(current_user), class: 'link' %>
+          <%= link_to "Bands", bands_path, class: 'link' %>
           
           <div class='user-detail'>
             <p>Logged in as: <%= current_user.name %></p>
@@ -23,8 +26,9 @@
             </form>
           </div>
       </nav>
+    </header>
     <% end %>
-    <p>
+    <div class='errors'>
       <% if flash[:error] %>
           <% flash[:error].each do |error| %>
               <ul>
@@ -32,10 +36,10 @@
               </ul>
           <% end %>
       <% end %>
-    </p>
-    <p>
+    </div>
+    <div class='success'>
       <%= flash[:success] if flash[:success] %>
-    </p>
+    </div>
     <%= yield %>
   </body>
 </html>

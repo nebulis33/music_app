@@ -47,4 +47,5 @@
 </form>
 <br>
 
-<%= link_to 'Back to track page', track_path(@track) %>
+<%= link_to 'Back to track page', track_path(@track), class: 'link' %>
+<%= link_to "Back to album page", album_path(@track.album), class: 'link' %>

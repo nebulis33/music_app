@@ -2,7 +2,9 @@
 
 <ol>
     <% @bands.each do |band| %>
-        <li><%= band.name %></li>
+        <li><%= link_to band.name, band_path(band) %></li>
     <% end %>
 </ol>
+
+<%= link_to "Create new band", new_band_path, class: 'link' %>
 

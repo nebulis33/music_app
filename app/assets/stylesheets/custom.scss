@@ -1,0 +1,71 @@
+// Body styles
+html {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 65vw;
+    min-height: 100vh;
+    background-color: ivory;
+    padding: 0 2em;
+    margin: 0 auto;
+}
+
+// Flash styles
+div {
+    &.errors {
+        border-radius: 5px;
+        background-color: rgba(255, 176, 176, 0.822);
+    }
+    &.success {
+        border-radius: 5px;
+        background-color: rgba(205, 255, 176, 0.822);
+    }
+}
+
+// Header styles
+nav {
+    display: block;
+    a:last-of-type {
+        padding: 0 1em;
+    }
+        div {
+            display: block;
+            form input[type="submit"] {
+                background-color: rgba(206, 206, 206, 0.788);
+                padding: 4px;
+                border: none;
+                border-radius: 2px;
+                cursor: pointer;
+        }
+    }
+}
+
+// Link styles
+a {
+
+    &.link{
+        background-color: rgb(250, 139, 3);
+        border-radius: 5px;
+        padding: 2px;
+        text-decoration: none;
+        color: white;
+    }
+    &.edit_link, &.delete_link {
+        background-color: rgba(0, 155, 46, 0.89);
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        padding: 2px;
+    }
+    &.delete_link {
+        background-color:rgba(163, 19, 0, 0.808);
+    }
+}
+
+// Lists
+li {
+    margin-top: 0.25em;
+}

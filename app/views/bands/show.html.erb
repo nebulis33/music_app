@@ -3,12 +3,12 @@
 <% @band.albums.each do |album| %>
     <ul>
         <li><%= link_to album.title, album_path(album) %> - 
-        <%= link_to "edit", edit_album_path(album) %> 
-        <%= link_to "delete", album_path(album), method: "DELETE", data: {confirm: "Are you sure?"} %>
+        <%= link_to "edit", edit_album_path(album), class: 'link' %> 
+        <%= link_to "delete", album_path(album), method: "DELETE", data: {confirm: "Are you sure?"}, class: 'link' %>
         </li>
     </ul>
 <% end %>
 
 <br>
 
-<%= link_to "New album", new_band_album_path(@band) %>
+<%= link_to "New album", new_band_album_path(@band), class: 'link' %>
