@@ -28,6 +28,8 @@ INcomplete functionalities:
 
 * Most refactoring
 
+* Rails forms (forms are all in html as practice)
+
 
 ## Relevant information:
 
